@@ -1,9 +1,36 @@
 ### Well hello there!
 
-This repository is meant to provide an example for *forking* a repository on GitHub.
+Git bir versiyon kontrol sistemidir.(vks)
+Diğer vksler delta-bazlı(değişim bazlı) olarak çalışırken git anlık görünüm referansları alarak çalışır.
+Git dosyların sağlamasını yapmak için SHA-1 adında bir mekanizma kullanır.
+Git dosyaları 3 ana durumda bulunabilir:
 
-Creating a *fork* is producing a personal copy of someone else's project. Forks act as a sort of bridge between the original repository and your personal copy. You can submit *Pull Requests* to help make other people's projects better by offering your changes up to the original project. Forking is at the core of social coding at GitHub.
+-> Modified, dosyayı değiştirdiğinizi ama henüz veritabanına commitlemediğinizi gösterir.
+->  Staged, değiştirilmiş bir dosyayı bir sonraki commit anlık görünümünde işlenecek şekilde işaretlediğinizi gösterir.
+-> Committed, dosyanın güvenli bir şekilde yerel veritabanınızda saklandığını gösterir.
 
-After forking this repository, you can make some changes to the project, and submit [a Pull Request](https://github.com/octocat/Spoon-Knife/pulls) as practice.
+Git’in iş akışı basitçe şöyledir:
 
-For some more information on how to fork a repository, [check out our guide, "Forking Projects""](http://guides.github.com/overviews/forking/). Thanks! :sparkling_heart:
+1) Working tree’de dosyaları düzenlersiniz.
+2) Bir sonraki committe işlenecek olan değişiklikleri seçersiniz.
+3) Bir commit yaparsınız, staging area’daki dosyaların anlık görünümünü çeker ve Git klasörünüzde kalıcı olarak saklarsınız.
+
+"git config --list" komutunu kullanarak Git’in o aşamada bulabildiği tüm ayarları listelemesini sağlayabilirsiniz.
+"git help" yardım
+
+"git init" komutu ile proje dosayısının olduğu yerde repository oluşturulur.
+"git clone <url>" komutu ile var olan bir proje repository olarak alınır.
+"git status" komutu ile dosyalarının durumu kontrol edilir
+"git status -s" dosyalarının durumu özet bir şekilde gösterilir
+"git add <files>" komutu ile takip edilicek dosyalara yeni bir tanesi eklenir
+".gitgnore" ile takip edilmek istenmeyen dosyalar belirtilebilir.
+"git diff" ile değişiklik yapılan ve unstaged olan dosyaların bilgisi görüntülenir.
+"git commit -m ''" ile yapılan değişiklikler commit edilir.
+"git commit -a -m ''"  '-a' ile stage are skiplenebilir.
+"git rm" ile istenilen dosya remove edilebilir.
+"git log" ile commit history görüntülenebilir.
+"git fetch" ile hedefteki dosyalar toplanır.
+"git push" ile yapılan değişiklikler servera iletilir.
+"git branch <branchname>" ile yeni bir branch oluşturulur.
+"git checkout <branchname>" ile çalışılan branch değiştirilebilir.
+"git merge" ile branchler birleştirilebilir.
